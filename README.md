@@ -1,1 +1,1 @@
-
+封装集成了腾讯X5Webview和JsBridg的用于android端和js端交互的x5BridgeWebview
