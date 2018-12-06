@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, user-scale=1">
+    <script src="js/jquery.min.js"></script>
+    <title></title>
+    <style type="text/css" rel="stylesheet">
+        .line{
+            width:100%;
+            background: #000000;
+            height: 1px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+        <video style="width:100%; height: auto;" controls>
+           <source src=http://125.64.133.74/data9/userfiles/video02/2014/12/11/2796948-280-068-1452.mp4 >
+        </video>
+        <div style="width:100%;height: 25px;"></div>
+        <button  id="bt1"   style="width:50%;height: 50px; float: left"> x5模式全屏</button>
+        <button  id="bt2"   style="width:50%;height: 50px;"> 普通模式全屏</button>
+        <div class="line"></div>
+        <button  id="bt3"   style="width:50%;height: 50px; float: left"> 小窗模式</button>
+        <button  id="bt4"   style="width:50%;height: 50px;"> 关闭小窗模式</button>
+        <div class="line"></div>
+        <button  id="bt5"   style="width:50%;height: 50px; float: left"> 页面内全屏</button>
+        <button  id="bt6"   style="width:50%;height: 50px;"> 关闭页面内全屏</button>
+</body>
+
+
+<script>
+
+   var action = "";//分发动作：该参数为了便于android统一管理所有方法，具体看android代码
+
+   $("#bt1").on("click", function(){
+        console.log("1");
+        var method = "jsSendToAndroid";//js调用的android方法名
+        action = "playvideos";//播放视频动作
+        var params = {"type":"1", "callback":"", "action":action};//android接收参数，json格式
+        callAndroidMethod(method, params);
+
+        location.reload(false);
+    });
+
+
+     $("#bt2").on("click", function(){
+        console.log("2");
+        var method = "jsSendToAndroid";//js调用的android方法名
+        action = "playvideos";//播放视频动作
+        var params = {"type":"2", "callback":"", "action":action};//android接收参数，json格式
+        callAndroidMethod(method, params);
+
+        location.reload(false);
+    });
+
+
+     $("#bt3").on("click", function(){
+        console.log("3");
+        var method = "jsSendToAndroid";//js调用的android方法名
+        action = "playvideos";//播放视频动作
+        var params = {"type":"3", "callback":"", "action":action};//android接收参数，json格式
+        callAndroidMethod(method, params);
+
+        location.reload(false);
+    });
+
+     $("#bt4").on("click", function(){
+        console.log("4");
+        var method = "jsSendToAndroid";//js调用的android方法名
+        action = "playvideos";//播放视频动作
+        var params = {"type":"4", "callback":"", "action":action};//android接收参数，json格式
+        callAndroidMethod(method, params);
+
+        location.reload(false);
+    });
+
+
+     $("#bt5").on("click", function(){
+        console.log("5");
+        var method = "jsSendToAndroid";//js调用的android方法名
+        action = "playvideos";//播放视频动作
+        var params = {"type":"5", "callback":"", "action":action};//android接收参数，json格式
+        callAndroidMethod(method, params);
+
+        location.reload(false);
+    });
+
+
+     $("#bt6").on("click", function(){
+        console.log("6");
+        var method = "jsSendToAndroid";//js调用的android方法名
+        action = "playvideos";//播放视频动作
+        var params = {"type":"6", "callback":"", "action":action};//android接收参数，json格式
+        callAndroidMethod(method, params);
+
+        location.reload(false);
+    });
+
+
+     /**
+     * 统一管理js调用安卓方法
+     * @param method 方法名
+     * @param params 参数 数组格式
+     */
+    var callAndroidMethod = function(method, params){
+        window.jsInterface.invokeMethod(method, [JSON.stringify(params)]);// JavaScript 值转换为 JavaScript 对象表示法 (Json) 字符串
+    }
+</script>
+</html>
